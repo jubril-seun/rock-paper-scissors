@@ -1,8 +1,8 @@
 function getComputerChoice(){
-    let ComputerChoice = Math.floor(Math.random() *3);
-    if(ComputerChoice === 0){
+    let computerChoice = Math.floor(Math.random() *3);
+    if(computerChoice === 0){
         return "rock";
-    } else if (ComputerChoice === 1){
+    } else if (computerChoice === 1){
         return "paper";
     } else {
         return "scissors";
@@ -35,3 +35,21 @@ function playRound(humanChoice, computerChoice){
         }
         
 }
+
+function playGame(){
+    playRound(getHumanChoice(),getComputerChoice())
+    playRound(getHumanChoice(),getComputerChoice())
+    playRound(getHumanChoice(),getComputerChoice())
+    playRound(getHumanChoice(),getComputerChoice())
+    playRound(getHumanChoice(),getComputerChoice())
+
+    if(humanScore > computerScore) {
+        console.log("You win. You won " + humanScore + " out of 5 rounds.");
+    } else if (humanScore < computerScore) {
+        console.log("You lose. You lost " + humanScore + " out of 5 rounds.");
+    } else {
+        console.log("It's a tie!");
+    }
+}
+
+playGame();
